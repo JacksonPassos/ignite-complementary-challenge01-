@@ -4,6 +4,7 @@ import { api } from '../services/api'
 import '../styles/content.scss'
 
 import { MovieCard } from '../components/MovieCard';
+import { Header } from './Header';
 
 interface MovieProps {
   imdbID: string;
@@ -36,10 +37,7 @@ export function Content(props: ContentProps) {
 
   return (
     <>
-      <header>
-        <span className="category">Categoria:<span> {title}</span></span>
-      </header>
-
+      <Header title={title} />
       <main>
         <div className="movies-list">
           {movies.map(movie => (
